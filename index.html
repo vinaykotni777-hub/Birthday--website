@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Renuka ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ff4e8a,#ff85a2,#ffd6e8);
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+/* Main Card */
+.card{
+z-index:10;
+padding:20px;
+max-width:90%;
+}
+
+h1{
+font-size:40px;
+animation:glow 2s infinite alternate;
+text-shadow:0 0 10px white;
+}
+
+h2{
+<h2 id="countdown"></h2>
+margin-top:10px;
+font-size:26px;
+}
+p{
+margin-top:15px;
+font-size:18px;
+line-height:1.6;
+}
+
+button{
+margin-top:25px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff2f6d;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+/* Hidden Message */
+#msg{
+display:none;
+margin-top:20px;
+padding:15px;
+background:rgba(255,255,255,0.2);
+border-radius:15px;
+}
+
+/* Glow */
+@keyframes glow{
+from{ text-shadow:0 0 10px white; }
+to{ text-shadow:0 0 25px yellow; }
+}
+
+/* Floating Hearts */
+.heart{
+position:absolute;
+bottom:-50px;
+color:red;
+font-size:20px;
+animation:floatUp 8s linear infinite;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:0;}
+20%{opacity:1;}
+100%{transform:translateY(-110vh);opacity:0;}
+}
+
+/* Balloons */
+.balloon{
+position:absolute;
+bottom:-100px;
+width:40px;
+height:50px;
+border-radius:50%;
+animation:rise 10s linear infinite;
+}
+
+@keyframes rise{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* Sparkles */
+.sparkle{
+position:absolute;
+font-size:20px;
+animation:fade 1.5s linear forwards;
+}
+
+@keyframes fade{
+0%{opacity:1;}
+100%{opacity:0;}
+}
+
+/* Fireworks canvas */
+canvas{
+position:absolute;
+top:0;
+left:0;
+}
+
+.gallery{
+margin-top:15px;
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.gallery img{
+width:90px;
+height:90px;
+border-radius:12px;
+object-fit:cover;
+border:2px solid white;
+box-shadow:0 0 10px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.2);
+}
+.slideshow{
+margin-top:15px;
+display:flex;
+justify-content:center;
+}
+
+.slideshow img{
+width:200px;
+height:200px;
+border-radius:15px;
+object-fit:cover;
+border:3px solid white;
+box-shadow:0 0 15px rgba(0,0,0,0.4);
+transition:1s;
+
+</style>
+</head>
+
+<body>
+
+<canvas id="fireworks"></canvas>
+
+<div class="card">
+<h1>🎂 Happy Birthday 🎂</h1>
+<h2>My Beautiful Wife ❤️<br>Renuka</h2>
+
+<p>
+You are my world, my happiness, my forever ❤️
+<p>
+
+<button onclick="showSurprise()">🎁 Open Surprise</button>
+
+<div id="msg">
+  <h3 style="margin-top:20px;">📸 Our Memories</h3>
+
+<div class="gallery">
+
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+<img src="photo3.jpg">
+
+</div>
+<h2>❤️ My Love Renuka ❤️</h2>
+<p> 
+Happy Birthday my queen 👑<br><br>
+
+You are the reason my life feels beautiful every day.<br>
+I am lucky to call you my wife.<br><br>
+
+I promise to love you more with every heartbeat.<br>
+Stay happy forever ❤️<br><br>
+
+— Yours forever,<br>
+<b>Vinay</b>
+</p>
+</div>
+
+</div>
+
+<script>
+
+/* ===================== SURPRISE MESSAGE ===================== */
+function showSurprise(){
+document.getElementById("msg").style.display="block";
+typeWriter();
+startFireworks();
+}
+
+/* ===================== TYPING EFFECT ===================== */
+let i = 0;
+let text = `Happy Birthday My Love Renuka ❤️
+
+You are not just my wife,
+you are my heartbeat, my peace, my happiness.
+
+Every day with you feels like a blessing.
+
+I promise to stand with you in every moment,
+in happiness and in struggle.
+
+I love you forever ❤️
+
+— Vinay`;
+
+function typeWriter(){
+let box = document.getElementById("typed");
+if(!box) return;
+
+if(i < text.length){
+box.innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter, 50);
+}
+}
+
+/* ===================== HEARTS ===================== */
+for(let i=0;i<40;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(5+Math.random()*6)+"s";
+document.body.appendChild(h);
+}
+
+/* ===================== BALLOONS ===================== */
+const colors=["#ff4d6d","#ffb703","#4cc9f0","#9b5de5","#06d6a0"];
+
+for(let i=0;i<15;i++){
+let b=document.createElement("div");
+b.className="balloon";
+b.style.left=Math.random()*100+"vw";
+b.style.background=colors[Math.floor(Math.random()*colors.length)];
+b.style.animationDuration=(7+Math.random()*5)+"s";
+document.body.appendChild(b);
+}
+
+/* ===================== SPARKLES ===================== */
+setInterval(()=>{
+let s=document.createElement("div");
+s.innerHTML="✨";
+s.style.position="absolute";
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+s.style.fontSize="18px";
+document.body.appendChild(s);
+setTimeout(()=>s.remove(),1200);
+},250);
+
+/* ===================== FIREWORKS ===================== */
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+
+function startFireworks(){
+for(let i=0;i<150;i++){
+particles.push({
+x:canvas.width/2,
+y:canvas.height/2,
+vx:(Math.random()-0.5)*12,
+vy:(Math.random()-0.5)*12,
+life:120
+});
+}
+}
+
+function draw(){
+ctx.fillStyle="rgba(0,0,0,0.15)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+particles.forEach((p,i)=>{
+p.x+=p.vx;
+p.y+=p.vy;
+p.life--;
+
+ctx.fillStyle="hsl("+(p.life*2)+",100%,60%)";
+ctx.fillRect(p.x,p.y,3,3);
+
+if(p.life<=0)particles.splice(i,1);
+});
+
+requestAnimationFrame(draw);
+}
+draw();
+
+/* ===================== OPTIONAL MUSIC ===================== */
+let audio = new Audio("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3");
+
+function playMusic(){
+audio.loop = true;
+audio.play();
+}
+let images = ["photo1.jpg","photo2.jpg","photo3.jpg"];
+let index = 0;
+
+setInterval(()=>{
+let img = document.getElementById("slide");
+if(!img) return;
+
+index++;
+if(index >= images.length) index = 0;
+
+img.style.opacity = 0;
+
+setTimeout(()=>{
+img.src = images[index];
+img.style.opacity = 1;
+},500);
+},2500);
+</script>
+</body>
+</html>
